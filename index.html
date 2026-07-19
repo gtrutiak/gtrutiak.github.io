@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אפקט פנס על טקסט</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111; /* רקע כהה כדי להדגיש את הפנס */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .spotlight-container {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* הטקסט הנסתר/החשוך שיושב ברקע */
+        .text-background {
+            color: #222; /* צבע כהה מאוד שמדמה טקסט בתוך החושך */
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            user-select: none;
+        }
+
+        /* הטקסט המואר שמונח בדיוק מעל */
+        .text-foreground {
+            position: absolute;
+            top: 20px; /* תואם ל-padding של הקונטיינר */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            color: #fff; /* צבע הטקסט כשהפנס מאיר עליו */
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            
+            /* יצירת אפקט הפנס העגול באמצעות מסיכה */
+            -webkit-mask-image: radial-gradient(circle 80px at 0% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            mask-image: radial-gradient(circle 80px at 0% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            
+            /* הפעלת האנימציה: 3 שניות לכל סבב, רץ 3 פעמים, נעצר במצב האחרון */
+            animation: spotlightMove 3s ease-in-out 3 forwards;
+        }
+
+        /* הגדרת תנועת הפנס משמאל לימין */
+        @keyframes spotlightMove {
+            0% {
+                -webkit-mask-image: radial-gradient(circle 100px at -20% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+                mask-image: radial-gradient(circle 100px at -20% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            }
+            50% {
+                -webkit-mask-image: radial-gradient(circle 100px at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+                mask-image: radial-gradient(circle 100px at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            }
+            100% {
+                /* בסוף הסבב השלישי האור יוצא אל מחוץ למסך מימין */
+                -webkit-mask-image: radial-gradient(circle 100px at 120% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+                mask-image: radial-gradient(circle 100px at 120% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            }
+        }
+
+        /* אופציונלי: שינוי מצב המסיכה בסיום 3 הסבבים כדי להשאיר את כל הטקסט מואר באופן קבוע */
+        .text-foreground {
+            animation: spotlightMove 3s ease-in-out 3 forwards, revealAll 0.1s 9s forwards;
+        }
+
+        @keyframes revealAll {
+            to {
+                -webkit-mask-image: none;
+                mask-image: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="spotlight-container">
+        <!-- שכבה 1: הטקסט החשוך -->
+        <h1 class="text-background">SPOTLIGHT EFFECT</h1>
+        <!-- שכבה 2: הטקסט המואר שנחשף ע"י הפנס -->
+        <h1 class="text-foreground">SPOTLIGHT EFFECT</h1>
+    </div>
+
+</body>
+</html>
