@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZ-104 Exam Simulator (Moed B)</title>
+    <link rel="stylesheet" href="moed-b.css">
+</head>
+<body>
+    <nav class="navbar"><div class="logo">Exam Simulator - Moed B <span>(AZ-104)</span></div></nav>
+    
+    <div id="main-wrapper">
+        <div id="sidebar">
+            <h3 id="sidebar-title">Questions Status</h3>
+            <div id="nav-list"></div>
+            <div id="sidebar-footer">
+                <button class="finish-btn" onclick="showResults()">Finish Exam</button>
+            </div>
+        </div>
+
+        <div id="quiz-container">
+            <div id="quiz-header">
+                <div class="menu-top">
+                    <strong>Exam Simulator</strong>
+                    <span id="timer-display">Time Left: 50:00</span>
+                    <span id="progress-indicator">Question: 1/25</span>
+                    <button id="reset-btn" onclick="location.reload()">Restart</button>
+                </div>
+            </div>
+            <div id="question-area" class="fade-in"></div>
+            <div id="feedback-area"></div>
+            
+            <div id="navigation-controls">
+                <button id="prev-btn" onclick="prevQuestion()" title="Previous Question">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </button>
+                <button id="submit-btn" onclick="showResults()" title="Finish Exam">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </button>
+                <button id="next-btn-nav" onclick="nextQuestion()" title="Next Question">
+                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>Created by Guy Trutiak</footer>
+    <script src="moed-b.js"></script>
+</body>
+</html>

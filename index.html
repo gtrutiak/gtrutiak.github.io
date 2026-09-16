@@ -1,72 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Exam simulators content hub">
+    <title>Exams Simulators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="component">
-				<ul class="align">
-					<li>
-						<figure class='book'>
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+            <div class="sidebar-header">
+                <button class="icon-btn" id="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="true">
+                    <span aria-hidden="true">☰</span>
+                </button>
+                <h1 class="logo-text">Exams<br>Simulators</h1>
+            </div>
 
-							<!-- Front -->
+            <nav class="sidebar-nav">
+                <!-- <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <button class="nav-link submenu-toggle" type="button" title="AZ-104 Simulators" aria-expanded="false">
+                            <span class="nav-icon" aria-hidden="true">📁</span>
+                            <span class="nav-label">AZ-104 Simulators</span>
+                            <span class="chevron-icon" aria-hidden="true">❯</span>
+                        </button>
+                        <ul class="submenu">
+                            <li><a href="./az-104/moed-a/az104moeda.html" target="content-frame" class="submenu-link">Moed-A</a></li>
+                            <li><a href="./az-104/moed-b/az104moedb.html" target="content-frame" class="submenu-link">Moed-B</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+                <ul class="nav-list">
 
-							<ul class='hardcover_front'>
-								<li>
-									<div class="coverDesign blue">
-										
-                                        <h1>Azure Administrator (AZ-104)</h1>
-                                        
-										<h1>Exam <br>Simulator</h1>
-                                        
-									</div>
-								</li>
-								<li></li>
-							</ul>
+    <li class="nav-item">
+        <a href="articles.html"
+           target="content-frame"
+           class="nav-link">
+            <span class="nav-icon" aria-hidden="true">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+    </li>
 
-							<!-- Pages -->
+    <li class="nav-item has-submenu">
+        <button class="nav-link submenu-toggle"
+                type="button"
+                title="AZ-104 Simulators"
+                aria-expanded="false">
 
-							<ul class='page'>
-								<li></li>
-								<li>
-									<a class="btn" href="https://gtrutiak.github.io/AZ-104/">Click To Enter</a>
-								</li>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
+            <span class="nav-icon" aria-hidden="true">📁</span>
+            <span class="nav-label">AZ-104 Simulators</span>
+            <span class="chevron-icon" aria-hidden="true">❯</span>
 
-							<!-- Back -->
+        </button>
 
-							<ul class='hardcover_back'>
-								<li></li>
-								<li></li>
-							</ul>
-							<ul class='book_spine'>
-								<li></li>
-								<li></li>
-							</ul>
-							<figcaption>
-								<h1>Exam Simulator</h1>
-								
-								<p dir="rtl" style="text-align: right;">
-                                   מיועד להכנה ותרגול לקראת המבחן הפנימי המסכם של מודול
-                                Microsoft Azure
-                                </p>
-                                <p></p>
-                                <p dir="rtl" style="text-align: right;">
-                                    מותאם עבור הלומדים במסגרת קורס </br>
-                                    Multi Cloud Infrastructure & AI Operations
-                                </p>
-                                <span></span>
-							</figcaption>
-						</figure>
-					</li>
-				</ul>
-			</div>
-	
+        <ul class="submenu">
+            <li>
+                <a href="./az-104/moed-a/az104moeda.html"
+                   target="content-frame"
+                   class="submenu-link">
+                    Moed-A
+                </a>
+            </li>
+
+            <li>
+                <a href="./az-104/moed-b/az104moedb.html"
+                   target="content-frame"
+                   class="submenu-link">
+                    Moed-B
+                </a>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="icon-btn theme-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                    <span class="nav-label">Dark Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <button class="sidebar-backdrop" id="sidebar-backdrop" type="button" aria-label="Close navigation" tabindex="-1"></button>
+
+        <main class="main-container">
+            <div class="mobile-toolbar">
+                <button class="icon-btn mobile-menu-btn" id="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">
+                    <span aria-hidden="true">☰</span>
+                </button>
+                <span class="mobile-title">Exams Simulators</span>
+            </div>
+            <iframe name="content-frame" id="content-frame" src="articles.html" title="Main content"></iframe>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
